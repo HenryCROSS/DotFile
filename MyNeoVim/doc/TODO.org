@@ -1,1 +1,0 @@
-ready to config lsp installer and orgmode
