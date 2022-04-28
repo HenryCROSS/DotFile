@@ -1,0 +1,3 @@
+[submodule "MyNeoVim"]
+	path = MyNeoVim
+	url = https://github.com/HenryCROSS/MyNeoVim
