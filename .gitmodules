@@ -1,3 +1,4 @@
 [submodule "MyNeoVim"]
 	url = ../MyNeoVim.git
-
+[submodule "DotFileManager"]
+	url = ../ DotFileManager
