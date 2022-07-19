@@ -1,6 +1,4 @@
 [submodule "MyNeoVim"]
-	path = MyNeoVim
-	url = https://github.com/HenryCROSS/MyNeoVim
+	url = ../MyNeoVim.git
 [submodule "DotFileManager"]
-	path = DotFileManager
-	url = https://github.com/HenryCROSS/DotFileManager/
+	url = ../ DotFileManager
