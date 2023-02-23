@@ -82,7 +82,6 @@
 (add-hook 'eshell-mode-hook 'rmCompanyMode)
 
 (add-hook 'company-mode
-          (company-fuzzy-mode t)
           (company-tng-configure-default))
 
 ;; cc lsp by default
