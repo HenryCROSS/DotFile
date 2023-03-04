@@ -50,7 +50,7 @@
 ;(unpin! t)
 
 ; disable the evil-snipe
-(package! evil-snipe :disable t)
+;; (package! evil-snipe :disable t)
 
 ;; tree-sitter
 (package! tree-sitter)

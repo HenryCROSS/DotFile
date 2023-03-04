@@ -63,8 +63,9 @@
 ;; they are implemented.
 
 ;; enable the S for normal vim edition
-(after! evil-snipe
-  (evil-snipe-mode -1))
+;; (after! evil-snipe ;; out dated
+;;   (evil-snipe-mode -1))
+(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 
 ;; auto complete delay
 (setq company-idle-delay 0.1
