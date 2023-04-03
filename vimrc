@@ -52,6 +52,10 @@ filetype indent on
 
 set viminfo+=!
 
+set nobackup
+set noswapfile
+set noundofile
+
 let g:auto_save = 1
 
 highlight Pmenu    guibg=darkgrey  guifg=black 
@@ -67,7 +71,7 @@ nmap <leader>wv :vsplit<CR>
 nmap <leader>wq <c-w>q
 
 nmap <leader>to :terminal<CR>
-"nmap <leader>to <c-\><c-n>
+nmap <C-q> <c-\><c-n>
 
 
 " fzf keybinding
