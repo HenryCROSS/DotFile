@@ -21,6 +21,8 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "CaskaydiaCove Nerd Font" :size 30 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "CaskaydiaCove Nerd Font" :size 30))
+;; (setq doom-font (font-spec :family "JetBrains Mono" :size 30 :weight 'Regular)
+;;       doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 30))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -35,8 +37,8 @@
 ;; org mode
 (after! org
   (setq org-directory "~/Documents/org/")
-  (setq org-agenda-files '("~/Documents/org/agenda.org"))
-  )
+  (setq org-agenda-files '("~/Documents/org/agenda.org")))
+  
 
 (remove-hook 'after-save-hook #'ws-butler-after-save)
 
@@ -63,17 +65,19 @@
 ;; they are implemented.
 
 ;; enable the S for normal vim edition
-(after! evil-snipe
-  (evil-snipe-mode -1))
+;; (after! evil-snipe ;; out dated
+;;   (evil-snipe-mode -1))
+(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 
 ;; auto complete delay
-(setq company-idle-delay 0.1
+(setq company-idle-delay 0
       company-minimum-prefix-length 1
       company-transformers '(
                              delete-consecutive-dups
-                             company-sort-by-occurrence
-                             )
+                             company-sort-by-occurrence)
+                             
       company-tooltip-limit 20)
+
 
 
 ;; disable company mode from eshell mode
@@ -81,9 +85,13 @@
   (company-mode -1))
 (add-hook 'eshell-mode-hook 'rmCompanyMode)
 
-(add-hook 'company-mode
-          (company-fuzzy-mode t)
-          (company-tng-configure-default))
+;;(add-hook 'company-mode
+;;  (company-tng-configure-default)
+;;  (define-key company-active-map (kbd "TAB") 'company-select-next)
+;;  (define-key company-active-map (kbd "<backtab>") 'company-select-previous)
+;;  (define-key company-active-map (kbd "RET") 'company-complete)
+;;  )
+
 
 ;; cc lsp by default
 (setq lsp-clients-clangd-args '("-j=3"
@@ -107,7 +115,7 @@
 (map! :n "j" #'evil-next-visual-line
       :n "k" #'evil-previous-visual-line)
 
-(run-with-idle-timer 0.1 t #'save-some-buffers t)
+(run-with-idle-timer 0.3 t #'save-some-buffers t)
 
 (setq x-select-enable-clipboard-manager nil)
 
@@ -122,4 +130,6 @@
 
 (setq split-width-threshold nil)
 
-;; eaf
+(setq scroll-step 1)
+(setq scroll-margin 5)
+(setq scroll-conservatively 9999)

@@ -50,16 +50,7 @@
 ;(unpin! t)
 
 ; disable the evil-snipe
-(package! evil-snipe :disable t)
-
-(package! company-fuzzy)
-(use-package! company-fuzzy
-  :hook (company-mode . company-fuzzy-mode)
-  :init
-  (setq company-fuzzy-sorting-backend 'flx
-        company-fuzzy-prefix-on-top nil
-        company-fuzzy-history-backends '(company-yasnippet)
-        company-fuzzy-trigger-symbols '("." "->" "<" "\"" "'" "@")))
+;; (package! evil-snipe :disable t)
 
 ;; tree-sitter
 (package! tree-sitter)
